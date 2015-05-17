@@ -2,5 +2,5 @@
 #node.js
 #Express
 
-# npm install
-#gulp
+npm install
+gulp
