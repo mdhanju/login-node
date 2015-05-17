@@ -1,0 +1,22 @@
+#register-new-user.modal.fade
+    .modal-dialog
+        .modal-content
+            .modal-body
+                form.form-group(action='/registerUser' method='get')
+                    button.close(data-dismiss='modal' aria-label='close')
+                        span(aria-hidden='true') &times;
+                    h4 Registration Form
+                    p Please enter the email address associated with your account
+                    input.form-control.input-modal(type="text" placeholder='Enter First Name' name='firstName' autofocus='autofocus')
+                    input.form-control.input-modal(type="text" placeholder='Enter Last Name' name='lirstName')
+                    input.form-control.input-modal(type="email" placeholder='Enter email' name='email')
+                    select.form-control.select-modal(placeholder='Select One' name='gender')
+                        option Male
+                        option Female
+                    input.form-control.input-modal(type="password" placeholder='Enter Password' name='password')
+                    input.form-control.input-modal(type="password" placeholder='Confirm Password' name='confirmPassword')
+                    input(type="checkbox", checked='checked' name='termCon')
+                    label.input-modal.terms-conditions I agree terms & conditions
+                    br
+                    button.btn.btn-primary(type='submit') Register
+                    
