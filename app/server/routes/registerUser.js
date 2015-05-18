@@ -30,7 +30,10 @@ module.exports = {
         });
 
 
-        req.send("Please wait \n we are in process of registering your user ");
+        // req.send("Please wait \n we are in process of registering your user ");
+        req.render('index', {
+            title: 'node-login'
+        });
     },
     adduserId: function(user, callback) {
         fs.readFile('database/users/users.json', 'utf8', function(err, data) {
