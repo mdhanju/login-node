@@ -2,5 +2,6 @@
 #node.js
 #Express
 
-npm install
-gulp
+cd node-login npm install
+
+cd node-login gulp
