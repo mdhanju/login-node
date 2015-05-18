@@ -34,10 +34,11 @@ $(document).ready(function() {
     function doneTyping() {
         console.log(" Done with typing need to activate validate user and activate password")
         var userName = $('#userId').val();
+        var reqData = "key=" + userName;
         //TODO :- Need to validate user with backend
-        validateUser(userName, function(result) {
-            console.log("VALUE === " + result)
-            if (result) {
+        $.get('/validateUser', reqData, function(data) {
+            console.log("DATA from server =  " + data)
+            if (data) {
                 $('#password').removeAttr('disabled');
                 $('#invalidUser').text("");
                 $('#userId').removeClass('error')
@@ -48,16 +49,5 @@ $(document).ready(function() {
                 $('#login-form input#password').attr('disabled', 'disabled');
             }
         })
-
-    };
-
-    function validateUser(user, callback) {
-        console.log("User to validate == " + user)
-        if (user === "test@mail.com") {
-            callback(true)
-        } else {
-            callback(false)
-        }
     }
-
-});
+})
