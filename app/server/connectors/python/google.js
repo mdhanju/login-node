@@ -4,8 +4,8 @@ var google = require('googleapis');
 var OAuth2Client = google.auth.OAuth2;
 var plus = google.plus('v1');
 
-var CLIENT_ID = '297914422763-g13474sk8ucva4lmspvd1nvposofk3os.apps.googleusercontent.com',
-    CLIENT_SECRET = '0BRLuXMMyDnJ-d8D7iG31Y0M',
+var CLIENT_ID = 'xxx',
+    CLIENT_SECRET = 'xxx',
     REDIRECT_URL = 'http://localhost:3000/oauth2callback';
 
 var oauth2Client = new OAuth2Client(CLIENT_ID, CLIENT_SECRET, REDIRECT_URL);

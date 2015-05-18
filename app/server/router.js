@@ -1,32 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
-var homePage = require('./routes/home.js')
+var logIn = require('./routes/logIn.js')
 var resetPass = require('./routes/resetPassword.js')
 var regiUser = require('./routes/registerUser.js')
+var homePage = require('./routes/home.js')
 
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//     res.render('index', {
-//         title: 'sms-reciever'
-//     });
-// });
-
-// router.get('/resetPassword', function(res, req, next) {
-//     console.log("Res = " + res.query.email);
-//     req.send("Hello " + res.query.email);
-// });
-router.get('/', homePage.homePage);
+router.get('/', logIn.logInPage);
 router.get('/resetPassword', resetPass.resetPasswordByEmail);
 router.get('/registerUser', regiUser.registerNewUser);
 
-router.get('/home', function(res, req, next) {
-    var userId = res.query.username;
-    var pass = res.query.password;
-    var rem = res.query.rememder;
-    console.log("Res = " + res);
-    req.send("home page  " + userId + "  " + pass + " == " + rem);
-});
+router.get('/home', homePage.getHomePage);
 
 // oauth2callback
 router.get('/oauth2callback', function(req, res, next) {

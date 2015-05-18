@@ -5,11 +5,12 @@ block content
 		form#login-form.well.container-fluid(action='/home',method='get')
 			h1 Log In 
 			p.subheading Please Login To Your Account
-			input.form-control.main(type="text" name="username" placeholder="Enter email")
-			input.form-control.main(type="password" name="password" placeholder="Password")
+			input.form-control.main#userId(type="text" name="username" placeholder="Enter email *")
+			p#invalidUser
+			input.form-control.main#password(type="password" name="password" placeholder="Password *")
 			label Remember Me
 			input.rememder(type="checkbox", checked='checked' name="rememder")
-			button.btn.btn-primary(type="submit") Sign in
+			button.btn.btn-primary#signIn(type="submit") Sign in
 			div.btm-links
 			a(href='#' data-toggle="modal" data-target="#req-password") Forgot Your Password?
 			a#create-account(href='#' data-toggle="modal" data-target="#register-new-user") Create An Account

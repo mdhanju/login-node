@@ -1,8 +1,18 @@
+var forgetPass = require('../connectors/forgetPass.js');
+
 module.exports = {
 
-    resetPasswordByEmail: function(res, req) {
-        console.log(" ================== ");
-        console.log("Res = " + res.query.email);
-        req.send("Hello " + res.query.email);
+    resetPasswordByEmail: function(req, res) {
+
+        forgetPass.resetPassword(req, function(result) {
+            console.log(" result ===  " + result);
+            if (result === true) {
+                res.render('index', {
+                    title: 'node-login'
+                });
+            } else {
+
+            }
+        });
     }
 };

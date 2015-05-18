@@ -35,7 +35,7 @@ if credentials is None or credentials.invalid:
 
 # Authorize the httplib2.Http object with our credentials
 http = credentials.authorize(http)
-
+print "http == %s" % http
 # Build the Gmail service from discovery
 gmail_service = build('gmail', 'v1', http=http)
 

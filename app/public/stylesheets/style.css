@@ -78,6 +78,14 @@ input.input-modal{
 .terms-conditions{
     margin-left: 2%;
 }
+
+#invalidUser{
+    color: #DC143C;
+}
+
+.error{
+    border:1px solid red;
+}
 /*
 .modal-single-input {
     width: 452px;
