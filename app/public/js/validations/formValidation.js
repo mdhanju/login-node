@@ -45,9 +45,9 @@ $(document).ready(function() {
             } else {
                 console.log(" Invalid User ")
                 $('#userId').addClass('error')
-                $('#invalidUser').text("Invalid User - Please check you user")
+                $('#invalidUser').text("Invalid User")
                 $('#login-form input#password').attr('disabled', 'disabled');
-            }
+            } 
         })
     }
 })
