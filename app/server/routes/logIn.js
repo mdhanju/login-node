@@ -1,7 +1,7 @@
 module.exports = {
 
     logInPage: function(req, res) {
-        res.render('index', {
+        res.render('logIn', {
             title: 'node-login'
         });
     }

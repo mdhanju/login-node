@@ -2,13 +2,13 @@
     .modal-dialog
         .modal-content
             .modal-body
-                form.form-group(action='/registerUser' method='get')
+                form.form-group#registerUser(action='/registerUser' method='get')
                     button.close(data-dismiss='modal' aria-label='close')
                         span(aria-hidden='true') &times;
                     h4 Registration Form
                     p Please enter the email address associated with your account
                     input.form-control.input-modal(type="text" placeholder='Enter First Name' name='firstName' autofocus='autofocus')
-                    input.form-control.input-modal(type="text" placeholder='Enter Last Name' name='lirstName')
+                    input.form-control.input-modal(type="text" placeholder='Enter Last Name' name='lastName')
                     input.form-control.input-modal(type="email" placeholder='Enter email' name='email')
                     select.form-control.select-modal(placeholder='Select One' name='gender')
                         option Male

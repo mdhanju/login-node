@@ -31,7 +31,6 @@
     "serve-favicon": "~2.2.0"
   },
   "devDependencies": {
-    "googleapis": "^2.0.3",
     "gulp": "^3.8.11",
     "gulp-jshint": "^1.10.0",
     "gulp-live-server": "0.0.14",

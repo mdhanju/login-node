@@ -7,7 +7,7 @@ module.exports = {
         forgetPass.resetPassword(req, function(result) {
             console.log(" result ===  " + result);
             if (result === true) {
-                res.render('index', {
+                res.render('logIn', {
                     title: 'node-login'
                 });
             } else {

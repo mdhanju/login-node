@@ -11,7 +11,7 @@ module.exports = {
         	if (err) console.log(err);
         	var userList = JSON.parse(data);
 
-        	for(user in userList){
+        	for(var user in userList){
         		if (userId === userList[user]) result = true;
         	}
         	res.send(result);

@@ -31,7 +31,7 @@ module.exports = {
 
 
         // req.send("Please wait \n we are in process of registering your user ");
-        req.render('index', {
+        req.render('logIn', {
             title: 'node-login'
         });
     },
