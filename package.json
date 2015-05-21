@@ -1,5 +1,5 @@
 {
-  "name": "node-login",
+  "name": "login-node",
   "version": "1.0.0",
   "description": "app to recieve sms",
   "main": "index.js",

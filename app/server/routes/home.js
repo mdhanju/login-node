@@ -1,8 +1,8 @@
 module.exports = {
 
     getHomePage: function(req, res) {
-
-        var userId = req.query.username;
+        var userId ="";
+        userId = req.query.username;
         var pass = req.query.password;
         var rem = req.query.rememder;
 
