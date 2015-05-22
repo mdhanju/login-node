@@ -15,13 +15,13 @@ $(document).ready(function() {
 
     // registerUser
     $("#registerUser input").keypress(function() {
-            var empty = false
-            $('form#registerUser >  input').each(function() {
-                if ($(this).val() == '') {
-                    empty = true;
-                }
-            });
-            if (!empty) $('#registerUser button').removeAttr('disabled');
-        })
-  
+        var empty = false
+        $('form#registerUser >  input').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+        if (!empty) $('#registerUser button').removeAttr('disabled');
+    })
+
 })

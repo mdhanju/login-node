@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#userId").focus();
-    $('#signIn, #login-form input#password').attr('disabled', 'disabled');
+    $('#signIn, #login-form input#password, #verifyEmail').attr('disabled', 'disabled');
 
     $("input.main").keypress(function() {
         var empty = false;
@@ -42,7 +42,7 @@ $(document).ready(function() {
                 $('#userId').addClass('error')
                 $('#invalidUser').text("Invalid User")
                 $('#login-form input#password').attr('disabled', 'disabled');
-            } 
+            }
         })
     };
 
@@ -51,13 +51,15 @@ $(document).ready(function() {
         pass = $(this).val();
     });
     $('*[name=confirmPassword]').keyup(function() {
-        
         var passVer = $(this).val();
-        if (pass === passVer){
+        if (pass === passVer) {
             $('#registerUser h5').text("");
-        }else{
+        } else {
             $('#registerUser h5').text("Password does't match");
         }
-        
     });
+
+    // $('*[name=RegisterEmail]').keyup(function() {
+    //     $('#verifyEmail').removeAttr('disabled');
+    // });
 })

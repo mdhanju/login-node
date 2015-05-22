@@ -28,6 +28,12 @@ p {
     width: 100%;
 }
 
+.fail{
+    color: red;
+}
+.success{
+    color: green;
+}
 input.rememder {
     margin-left: 2%
 }
@@ -57,9 +63,12 @@ label {
 
 input.input-modal{
     margin: 0 0 2% 0;
-    width: 60%
+    width: 60%;
 }
 
+.registerEmail{
+    width: 60%
+}
 .select-modal{
     margin: 0 0 2% 0;
     width: 60%
@@ -97,6 +106,9 @@ input.input-modal{
 
 .cutomLogIn{
     margin: 5%;
+}
+
+#verifyEmail{
 }
 /*.cutomLogIn
 .modal-single-input {

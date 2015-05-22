@@ -27,11 +27,13 @@ $(document).ready(function() {
         $firstName = $frm.find('*[name=firstName]').val();
         $lastName = $frm.find('*[name=lastName]').val();
         $email = $frm.find('*[name=email]').val();
+        $verification = $frm.find('*[name=verification]').val();
         $gender = $frm.find('*[name=gender]').val();
         $password = $frm.find('*[name=password]').val();
         $confirmPassword = $frm.find('*[name=confirmPassword]').val();
         $termCon = $frm.find('*[name=termCon]').val();
 
+        // if ($verification === "")
 
         $ajax_container = $(this);
         $ajax_container.hide();
@@ -39,6 +41,7 @@ $(document).ready(function() {
             firstName: $firstName,
             lastName: $lastName,
             email: $email,
+            verification : $verification,
             gender: $gender,
             password: $password,
             termCon: $termCon
