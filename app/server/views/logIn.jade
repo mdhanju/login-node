@@ -2,8 +2,8 @@ extends layout
 
 block content
 	.row
-		.col-sm-6
-			form#login-form.well.container-fluid(action='/home',method='get')
+		.col-sm-6.cutomLogIn.well
+			form#login-form.container-fluid(action='/home',method='post')
 				h1 Log In 
 				p.subheading Please Login To Your Account
 				input.form-control.main#userId(type="text" name="username" placeholder="Enter email *")

@@ -1,9 +1,6 @@
 $(document).ready(function() {
     $("#userId").focus();
     $('#signIn, #login-form input#password').attr('disabled', 'disabled');
-    // $('#signIn, #login-form input#password').each(function(){
-    //  $(this).attr('disabled', 'disabled');
-    // })
 
     $("input.main").keypress(function() {
         var empty = false;
@@ -35,19 +32,32 @@ $(document).ready(function() {
         console.log(" Done with typing need to activate validate user and activate password")
         var userName = $('#userId').val();
         var reqData = "key=" + userName;
-        //TODO :- Need to validate user with backend
+        //validate user with backend
         $.get('/validateUser', reqData, function(data) {
-            console.log("DATA from server =  " + data)
             if (data) {
                 $('#password').removeAttr('disabled');
                 $('#invalidUser').text("");
                 $('#userId').removeClass('error')
             } else {
-                console.log(" Invalid User ")
                 $('#userId').addClass('error')
                 $('#invalidUser').text("Invalid User")
                 $('#login-form input#password').attr('disabled', 'disabled');
             } 
         })
-    }
+    };
+
+    var pass;
+    $('*[name=password]').focusout(function() {
+        pass = $(this).val();
+    });
+    $('*[name=confirmPassword]').keyup(function() {
+        
+        var passVer = $(this).val();
+        if (pass === passVer){
+            $('#registerUser h5').text("");
+        }else{
+            $('#registerUser h5').text("Password does't match");
+        }
+        
+    });
 })

@@ -77,6 +77,10 @@ input.input-modal{
     border:1px solid red;
 }
 
+.errorPass{
+    color: red;
+}
+
 .divider{
     margin-top: 5%;
     margin-bottom: 5%;
@@ -90,7 +94,11 @@ input.input-modal{
     border-radius: 25px;
     border: 2px solid #000000;
 }
-/*
+
+.cutomLogIn{
+    margin: 5%;
+}
+/*.cutomLogIn
 .modal-single-input {
     width: 452px;
     margin: -200px 0 0 -232px;

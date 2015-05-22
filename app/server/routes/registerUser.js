@@ -3,7 +3,7 @@ var fs = require('fs');
 module.exports = {
 
     registerNewUser: function(res, req) {
-        var result = res.query;
+        var result = res.body;
         var userId = result.email;
 
         var addId = require('./registerUser.js');
@@ -29,11 +29,11 @@ module.exports = {
             }
         });
 
-
+        req.send("Sucess");
         // req.send("Please wait \n we are in process of registering your user ");
-        req.render('logIn', {
-            title: 'node-login'
-        });
+        // req.render('logIn', {
+        //     title: 'node-login'
+        // });
     },
     adduserId: function(user, callback) {
         fs.readFile('database/users/users.json', 'utf8', function(err, data) {
