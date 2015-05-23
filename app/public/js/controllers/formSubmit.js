@@ -26,7 +26,7 @@ $(document).ready(function() {
         $frm = $(this);
         $firstName = $frm.find('*[name=firstName]').val();
         $lastName = $frm.find('*[name=lastName]').val();
-        $email = $frm.find('*[name=email]').val();
+        $email = $frm.find('*[name=RegisterEmail]').val();
         $verification = $frm.find('*[name=verification]').val();
         $gender = $frm.find('*[name=gender]').val();
         $password = $frm.find('*[name=password]').val();
