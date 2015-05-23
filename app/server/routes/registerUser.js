@@ -3,13 +3,14 @@ var fs = require('fs');
 module.exports = {
 
     registerNewUser: function(res, req) {
+        console.log(res.body);
         var result = res.body;
         var userId = result.email;
 
         var addId = require('./registerUser.js');
 
 
-        var name = "nameee";//userId.replace('@', '').replace('.', '');
+        var name = userId.replace('@', '').replace('.', '');
         var filePath = 'database/users/' + name + '.json';
         var data = JSON.stringify(result);
 
