@@ -9,7 +9,7 @@ module.exports = {
         var addId = require('./registerUser.js');
 
 
-        var name = userId.replace('@', '').replace('.', '');
+        var name = "nameee";//userId.replace('@', '').replace('.', '');
         var filePath = 'database/users/' + name + '.json';
         var data = JSON.stringify(result);
 

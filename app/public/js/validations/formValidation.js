@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#userId").focus();
-    $('#signIn, #login-form input#password, #verifyEmail').attr('disabled', 'disabled');
+    $('#signIn, #login-form input#password').attr('disabled', 'disabled');
 
     $("input.main").keypress(function() {
         var empty = false;
@@ -39,7 +39,7 @@ $(document).ready(function() {
                 $('#invalidUser').text("");
                 $('#userId').removeClass('error')
             } else {
-                $('#userId').addClass('error')
+                $('#userId').addClass('error');
                 $('#invalidUser').text("Invalid User")
                 $('#login-form input#password').attr('disabled', 'disabled');
             }

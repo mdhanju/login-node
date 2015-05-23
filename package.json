@@ -28,12 +28,14 @@
     "express": "~4.12.2",
     "jade": "~1.9.2",
     "morgan": "~1.5.1",
+    "open": "0.0.5",
+    "request": "^2.55.0",
+    "sendgrid": "^1.8.0",
     "serve-favicon": "~2.2.0"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-jshint": "^1.10.0",
-    "gulp-live-server": "0.0.14",
-    "request": "^2.55.0"
+    "gulp-live-server": "0.0.14"
   }
 }

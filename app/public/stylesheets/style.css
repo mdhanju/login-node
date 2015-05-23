@@ -30,9 +30,11 @@ p {
 
 .fail{
     color: red;
+     border-color: red;
 }
 .success{
     color: green;
+    border-color: green;
 }
 input.rememder {
     margin-left: 2%

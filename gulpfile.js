@@ -1,8 +1,9 @@
 var gulp = require('gulp'),
     gls = require('gulp-live-server'),
     jshint = require('gulp-jshint'),
+    open = require('open'),
     paths = {
-        scripts: ['app/server/routes/*.js', 'app/server/connectors/*.js', '!lib/**/*.js']
+        scripts: ['app/server/**/*.js', '!lib/**/*.js']
     };
 
 
@@ -18,8 +19,12 @@ gulp.task('lint', function() {
         .pipe(jshint.reporter('default'));
 });
 
+gulp.task('open', function() {
+    open("http://localhost:3000/");
+})
+
 gulp.task('watch', function() {
     gulp.watch(paths.scripts, ['lint', 'start']);
 })
 
-gulp.task('default', ['watch', 'lint', 'start'])
+gulp.task('default', ['watch', 'lint', 'start', 'open'])

@@ -5,34 +5,41 @@ $(document).ready(function() {
 
     $('#verifyEmail').click(function() {
         $email = $('#emailToRegister').val();
-        console.log("USER EMAIL = " + $email);
-        $.post("/authorizeEmail", {
-            email: $email
-        }, function(data) {
-            if (data) {
-                $('.authorizeStatusMess').addClass('success')
-                $('.authorizeStatusMess').text('Email send sucessfull')
-            } else {
-                $('.authorizeStatusMess').addClass('fail')
-                $('.authorizeStatusMess').text('Email send unsucessfull')
-            }
-        })
+
+        if (/\S+@\S+\.\S+/.test($email)) {
+            $('.invalidEmail').removeClass('fail');
+            $('.invalidEmail').text("")
+            $.post("/requestCode", {
+                email: $email
+            }, function(data) {
+
+                if (data) {
+                    $('.statusCode input').removeAttr('disabled');
+                    $(".statusUpdate *").addClass('success');
+                    $('.authorizeStatusMess').text('Please check your Email for Verification Code')
+                } else {
+                    $(".statusUpdate *").addClass('fail');
+                    $('.authorizeStatusMess').text('Email send unsucessfull')
+                }
+            })
+        }else{
+            $('.invalidEmail').addClass('fail');
+            $('.invalidEmail').text("Invalid Email")
+        }
     });
 
     $('*[name=verification]').focusout(function() {
         $userCode = $(this).val();
-
         $.post("/verifyCode", {
             userCode: $userCode
         }, function(data) {
             if (data) {
-                $('.authorizeStatusMess').addClass('success')
-                $('.authorizeStatusMess').text('Valid Code !!')
+                $(".statusCode *").removeClass('fail').addClass('success');
+                $('.authorizeCode').text('Valid Code !!')
             } else {
-                $('.authorizeStatusMess').addClass('fail')
-                $('.authorizeStatusMess').text('Invalid Code ')
+                $(".statusCode *").removeClass('success').addClass('fail');
+                $('.authorizeCode').text('InValid Code !!')
             }
         })
     });
-
 })

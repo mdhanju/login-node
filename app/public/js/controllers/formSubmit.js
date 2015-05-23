@@ -46,7 +46,8 @@ $(document).ready(function() {
             password: $password,
             termCon: $termCon
         }, function(data) {
-            $ajax_container.html("Congrats !!  " + $firstName + " " + $lastName);
+            console.log("DATA from server = " + data)
+            $ajax_container.html("Congrats !!  " +"\n"+ $firstName + " " + $lastName);
             $ajax_container.slideDown('slow');
         })
         e.preventDefault();
