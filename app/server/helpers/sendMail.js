@@ -3,7 +3,7 @@ module.exports = {
     sendCodeEmail: function(to_address, verCode, callback) {
 
         var sg_username = "us94536@gmail.com";
-        var sg_password = "*********";
+        var sg_password = "Amritsar123"
 
         var text_body = "Hello,\n\nThis is message contains verification code from Login-node. We have sent this to you because you requested a verification code to register your account.\n\n Verification Code is " + verCode + " \n\nThanks for your interest,\n\n Maninder";
         var sendgrid = require("sendgrid")(sg_username, sg_password);
