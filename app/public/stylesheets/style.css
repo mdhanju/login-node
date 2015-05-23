@@ -14,7 +14,7 @@ body {
 }
 
 #login-container {
-    width: 60%;
+    width: 100%;
     margin: 0% auto;
 }
 
@@ -65,15 +65,15 @@ label {
 
 input.input-modal{
     margin: 0 0 2% 0;
-    width: 60%;
+    /*width: 80%;*/
 }
 
 .registerEmail{
-    width: 60%
+    /*width: 80%*/
 }
 .select-modal{
     margin: 0 0 2% 0;
-    width: 60%
+    /*width: 80%*/
 }
 
 .terms-conditions{
