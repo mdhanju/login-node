@@ -16,8 +16,7 @@
         "url": "https://github.com/mdhanju/node-login.git"
     },
     "keywords": [
-        "node",
-        "sms"
+        "node"
     ],
     "author": "Maninder Dhanju <singhmaninder21@gmail.com>",
     "license": "ISC",
