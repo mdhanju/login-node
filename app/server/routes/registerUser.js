@@ -11,12 +11,13 @@ module.exports = {
         var emailUser = result.email;
         var codeUser;
         var registerStatus = true;
-        var nameUser = result.firstName + " " + result.lastName;
+        var fNameUser = result.firstName;
+        var lNameUser = result.lastName;
         var passwordUser = result.password;
         var genderUser = result.gender;
 
 
-        addId.adduserId(emailUser, registerStatus, nameUser, passwordUser, genderUser, function(err) {
+        addId.adduserId(emailUser, registerStatus, fNameUser, lNameUser, passwordUser, genderUser, function(err) {
             if (err) console.log(err);
             req.send("Success");
         });
@@ -47,7 +48,7 @@ module.exports = {
         //     title: 'node-login'
         // });
     },
-    adduserId: function(emailUser, registerStatus, nameUser,  passwordUser, genderUser, callback) {
+    adduserId: function(emailUser, registerStatus, fnameUser, lnameUser, passwordUser, genderUser, callback) {
         fs.readFile('database/users.json', 'utf8', function(err, data) {
             if (err) console.log(err);
 
@@ -61,7 +62,8 @@ module.exports = {
                 if (emailfromData === emailUser) {
                     userNotExist = false;
                     userList[i].register = registerStatus;
-                    userList[i].name = nameUser;
+                    userList[i].firstname = fnameUser;
+                    userList[i].lastname = lnameUser;
                     userList[i].password = passwordUser;
                     userList[i].gender = genderUser;
                 }
@@ -71,7 +73,8 @@ module.exports = {
                 userData = {
                     email: emailUser,
                     register: registerStatus,
-                    name: nameUser,
+                    firstname: fnameUser,
+                    lastname: lnameUser,
                     password: passwordUser,
                     gender: genderUser
                 };

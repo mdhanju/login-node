@@ -11,18 +11,19 @@ var homePage = require('./routes/home.js');
 var dashboard = require('./routes/dashboard.js');
 var validateUser = require('./routes/validateUser.js');
 var edit = require('./routes/edit.js');
+var getEdit = require('./routes/getEdit.js');
 
 router.get('/', logIn.logInPage);
 router.get('/register', register.register);
 router.get('/dashboard', dashboard.getDashboard);
 router.get('/edit', edit.editProfile);
+router.get('/getEdit', getEdit.editProfileValues);
 // edit
 // app.use('/dashboard', dashboard);
 
 router.post('/resetPassword', resetPass.resetPasswordByEmail);
 router.post('/registerUser', regiUser.registerNewUser);
 router.post('/requestCode', requestCode.sendEmailCode);
-
 router.post('/verifyCode', verifyCode.verifyUserCode);
 
 router.get('/validateUser', validateUser.findUser);
