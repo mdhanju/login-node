@@ -1,1 +1,22 @@
-[{"email":"manindersingh.js@gmail.com","register":true,"firstname":"Maninder","lastname":"Singh","password":"password1","gender":"Male"},{"email":"us94536@gmail.com","register":true,"firstname":"Mani","lastname":"S","password":"passwor","gender":"Male"},{"email":"komalkaaur@gmail.com","register":true,"firstname":"Komal ","lastname":"Kaur","password":"pass","gender":"Female"}]
+[{
+    "email": "ms@gmail.com",
+    "register": true,
+    "firstname": "Mani",
+    "lastname": "Singh",
+    "password": "password1",
+    "gender": "Male"
+}, {
+    "email": "us@gmail.com",
+    "register": true,
+    "firstname": "M",
+    "lastname": "S",
+    "password": "passwor",
+    "gender": "Male"
+}, {
+    "email": "kk@gmail.com",
+    "register": true,
+    "firstname": "Kp ",
+    "lastname": "Kaur",
+    "password": "pass",
+    "gender": "Female"
+}]
