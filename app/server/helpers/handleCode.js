@@ -6,13 +6,13 @@ module.exports = {
     },
     setAuthCode: function(emailUser, codeUser) {
         var fs = require('fs');
-        fs.readFile('authCodes.json', 'utf8', function(err, data) {
+        fs.readFile('database/authCodes.json', 'utf8', function(err, data) {
+            var codeList;
             if (err) {
                 console.log(err);
-                var codeList = []
+                codeList = [];
             } else {
-
-                var codeList = JSON.parse(data);
+                codeList = JSON.parse(data);
             }
             var userNotExist = true;
             for (var i = 0; i < codeList.length; i++) {
@@ -31,14 +31,14 @@ module.exports = {
                 codeList.push(userData);
             }
             var finalData = JSON.stringify(codeList);
-            require('fs').writeFile('authCodes.json', finalData, function(err) {
+            require('fs').writeFile('database/authCodes.json', finalData, function(err) {
                 if (err) console.log(" ***** GOT ERROR ***** ");
                 // console.log(" Code save sucessfullt ");
             });
         });
     },
     getAuthCode: function(email, callback) {
-        require('fs').readFile('authCodes.json', function(err, data) {
+        require('fs').readFile('database/authCodes.json', function(err, data) {
             if (err) console.log(" ***** GOT ERROR ***** ");
             var codeList = JSON.parse(data);
             var result;

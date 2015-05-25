@@ -6,6 +6,12 @@ module.exports = {
             rem = req.body.rememder,
             authenticate = require('../connectors/authenticate.js');
 
+        var Cookies = require("cookies");
+        var cookies = new Cookies(req, res);
+        cookies.set("email", userId, {
+            httpOnly: false
+        });
+
         authenticate.authenticateUser(userId, pass, function(data) {
             var parseJson = require('../helpers/parseJson.js');
             var firstName = parseJson.getValueFromJson('firstName', data, function() {}) || '';
