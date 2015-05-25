@@ -28,7 +28,7 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-
+console.log('App listening at http://%s:%s', 'localhost', server.address().port);
 // var goo = require('../server/connectors/google')
 /**
  * Normalize a port into a number, string, or false.

@@ -112,6 +112,10 @@ input.input-modal{
 
 #verifyEmail{
 }
+
+.glyphicon {
+    font-size: 30px;
+}
 /*.cutomLogIn
 .modal-single-input {
     width: 452px;

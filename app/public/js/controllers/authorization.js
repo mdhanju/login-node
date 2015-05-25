@@ -22,7 +22,7 @@ $(document).ready(function() {
                     $('.authorizeStatusMess').text('Email send unsucessfull')
                 }
             })
-        }else{
+        } else {
             $('.invalidEmail').addClass('fail');
             $('.invalidEmail').text("Invalid Email")
         }
@@ -30,8 +30,10 @@ $(document).ready(function() {
 
     $('*[name=verification]').focusout(function() {
         $userCode = $(this).val();
+        $usermail = $('#emailToRegister').val();
         $.post("/verifyCode", {
-            userCode: $userCode
+            userCode: $userCode,
+            email: $usermail
         }, function(data) {
             if (data) {
                 $(".statusCode *").removeClass('fail').addClass('success');

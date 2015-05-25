@@ -7,12 +7,11 @@ module.exports = {
         
         //Reading users.json from database
         // currently data is all json
-        require('fs').readFile('database/users/users.json', 'utf8', function(err, data) {
+        require('fs').readFile('database/users.json', 'utf8', function(err, data) {
         	if (err) console.log(err);
         	var userList = JSON.parse(data);
-
         	for(var user in userList){
-        		if (userId === userList[user]) result = true;
+        		if (userId === userList[user].email) result = true;
         	}
         	res.send(result);
         });

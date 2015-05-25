@@ -12,7 +12,7 @@ module.exports = {
             var lastName = parseJson.getValueFromJson('lastName', data, function() {}) || '';
 
             var userId = firstName + ' ' + lastName;
-            res.render('home', {
+            res.render('dashboard', {
                 title: 'node-login',
                 name: userId
             });

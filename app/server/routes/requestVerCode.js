@@ -4,7 +4,7 @@ module.exports = {
     sendEmailCode: function(req, res) {
         var toEmail = req.body.email;
 
-        require('../helpers/handleCode').generateEmailAuthCode(function(data) {
+        require('../helpers/handleCode').generateEmailAuthCode(toEmail, function(data) {
 
             console.log(" To Email = " + toEmail);
             console.log(" Code = " + data);

@@ -8,10 +8,16 @@ var register = require('./routes/register.js');
 var requestCode = require('./routes/requestVerCode.js');
 var verifyCode = require('./routes/verifyCode.js');
 var homePage = require('./routes/home.js');
+var dashboard = require('./routes/dashboard.js');
 var validateUser = require('./routes/validateUser.js');
+var edit = require('./routes/edit.js');
 
 router.get('/', logIn.logInPage);
 router.get('/register', register.register);
+router.get('/dashboard', dashboard.getDashboard);
+router.get('/edit', edit.editProfile);
+// edit
+// app.use('/dashboard', dashboard);
 
 router.post('/resetPassword', resetPass.resetPasswordByEmail);
 router.post('/registerUser', regiUser.registerNewUser);
