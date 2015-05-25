@@ -2,6 +2,7 @@ module.exports = {
 
     sendCodeEmail: function(to_address, verCode, callback) {
 
+        console.log("Going to call == " + to_address + "  " + verCode);
         var sg_username = "us94536@gmail.com";
         var sg_password = "Amritsar123";
 
@@ -16,7 +17,7 @@ module.exports = {
                 text: text_body
             }, function(err, json) {
                 if (err) return console.error(err);
-                // console.log(json.message);
+                console.log("Messge === " + json.message);
                 if (json.message == 'success') callback(true);
             });
         } catch (e) {

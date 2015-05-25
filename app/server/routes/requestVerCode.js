@@ -6,12 +6,12 @@ module.exports = {
 
         require('../helpers/handleCode').generateEmailAuthCode(toEmail, function(data) {
 
-            // console.log(" To Email = " + toEmail);
-            // console.log(" Code = " + data);
+            console.log(" To Email = " + toEmail);
+            console.log(" Code = " + data);
 
             require('../helpers/sendMail').sendCodeEmail(toEmail, data, function(result) {
 
-                // console.log("Response from add email == " + result);
+                console.log("Response from add email == " + result);
                 res.send(result);
             });
         });
