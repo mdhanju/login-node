@@ -1,4 +1,3 @@
-
 module.exports = {
     generateEmailAuthCode: function(email, callback) {
         var code = Math.random().toString(36).slice(-10);
@@ -7,14 +6,14 @@ module.exports = {
     },
     setAuthCode: function(emailUser, codeUser) {
         var fs = require('fs');
-        console.log(" **** Going to write code  setAuthCode -----------------" );
-        fs.readFile('./database/authCodes.json', 'utf8', function(err, data) {
-            if (err) console.log(err);
-            console.log(" **** err  -----------------" + err);
-             console.log(" **** data -----------------"+ data );
-            var codeList = JSON.parse(data);
-            console.log(" **** codeList -----------------"+ codeList );
-            console.log(codeList );
+        fs.readFile('authCodes.json', 'utf8', function(err, data) {
+            if (err) {
+                console.log(err);
+                var codeList = []
+            } else {
+
+                var codeList = JSON.parse(data);
+            }
             var userNotExist = true;
             for (var i = 0; i < codeList.length; i++) {
                 var userEmailD = codeList[i].email;
@@ -32,19 +31,19 @@ module.exports = {
                 codeList.push(userData);
             }
             var finalData = JSON.stringify(codeList);
-            require('fs').writeFile('./database/authCodes.json', finalData, function(err) {
+            require('fs').writeFile('authCodes.json', finalData, function(err) {
                 if (err) console.log(" ***** GOT ERROR ***** ");
                 // console.log(" Code save sucessfullt ");
             });
         });
     },
     getAuthCode: function(email, callback) {
-        require('fs').readFile('./database/authCodes.json', function(err, data) {
+        require('fs').readFile('authCodes.json', function(err, data) {
             if (err) console.log(" ***** GOT ERROR ***** ");
             var codeList = JSON.parse(data);
             var result;
             for (var i = 0; i < codeList.length; i++) {
-                if(codeList[i].email === email){
+                if (codeList[i].email === email) {
                     result = codeList[i].code;
                 }
             }
