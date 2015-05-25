@@ -10,9 +10,11 @@ module.exports = {
         console.log(" **** Going to write code  setAuthCode -----------------" );
         fs.readFile('./database/authCodes.json', 'utf8', function(err, data) {
             if (err) console.log(err);
-            console.log(" **** err in setAuthCode -----------------" + err);
-             console.log(" **** in setAuthCode -----------------" );
+            console.log(" **** err  -----------------" + err);
+             console.log(" **** data -----------------"+ data );
             var codeList = JSON.parse(data);
+            console.log(" **** codeList -----------------"+ codeList );
+            console.log(codeList );
             var userNotExist = true;
             for (var i = 0; i < codeList.length; i++) {
                 var userEmailD = codeList[i].email;
