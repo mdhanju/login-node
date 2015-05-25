@@ -1,4 +1,4 @@
-var fs = require('fs');
+
 module.exports = {
     generateEmailAuthCode: function(email, callback) {
         var code = Math.random().toString(36).slice(-10);
@@ -6,9 +6,12 @@ module.exports = {
         callback(code);
     },
     setAuthCode: function(emailUser, codeUser) {
+        var fs = require('fs');
+        console.log(" **** Going to write code  setAuthCode -----------------" );
         fs.readFile('./database/authCodes.json', 'utf8', function(err, data) {
             if (err) console.log(err);
-
+            console.log(" **** err in setAuthCode -----------------" + err);
+             console.log(" **** in setAuthCode -----------------" );
             var codeList = JSON.parse(data);
             var userNotExist = true;
             for (var i = 0; i < codeList.length; i++) {
