@@ -13,7 +13,7 @@ module.exports = {
             var userNotExist = true;
             for (var i = 0; i < codeList.length; i++) {
                 var userEmailD = codeList[i].email;
-                console.log("userEmailD = %s" + codeList[i]);
+                // console.log("userEmailD = %s" + codeList[i]);
                 if (userEmailD === emailUser) {
                     codeList[i].code = codeUser;
                     userNotExist = false;
@@ -29,7 +29,7 @@ module.exports = {
             var finalData = JSON.stringify(codeList);
             require('fs').writeFile('./database/authCodes.json', finalData, function(err) {
                 if (err) console.log(" ***** GOT ERROR ***** ");
-                console.log(" Code save sucessfullt ");
+                // console.log(" Code save sucessfullt ");
             });
         });
     },

@@ -16,7 +16,7 @@ module.exports = {
                 text: text_body
             }, function(err, json) {
                 if (err) return console.error(err);
-                console.log(json.message);
+                // console.log(json.message);
                 if (json.message == 'success') callback(true);
             });
         } catch (e) {
