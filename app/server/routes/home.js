@@ -14,8 +14,8 @@ module.exports = {
 
         authenticate.authenticateUser(userId, pass, function(data) {
             var parseJson = require('../helpers/parseJson.js');
-            var firstName = parseJson.getValueFromJson('firstName', data, function() {}) || '';
-            var lastName = parseJson.getValueFromJson('lastName', data, function() {}) || '';
+            var firstName = parseJson.getValueFromJson('firstname', data, function() {}) || '';
+            var lastName = parseJson.getValueFromJson('lastname', data, function() {}) || '';
 
             var userId = firstName + ' ' + lastName;
             res.render('dashboard', {

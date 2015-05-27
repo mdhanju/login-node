@@ -9,6 +9,8 @@ module.exports = {
         // currently data is all json
         require('fs').readFile('database/users.json', 'utf8', function(err, data) {
             if (err) console.log(err);
+            console.log("errrr =  ")
+            console.log(err);
             var userList = JSON.parse(data);
 
             for (var user in userList) {

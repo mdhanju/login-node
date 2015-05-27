@@ -20,7 +20,7 @@ gulp.task('lint', function() {
 });
 
 gulp.task('open', function() {
-    open("http://localhost:3000/");
+    open("http://localhost:3000");
 })
 
 gulp.task('watch', function() {
